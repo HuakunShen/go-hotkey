@@ -224,3 +224,10 @@ const (
 	KeyF19 Key = 0x82
 	KeyF20 Key = 0x83
 )
+
+var ModiferMap = map[string]Modifier{
+	"Alt":   ModAlt,
+	"Ctrl":  ModCtrl,
+	"Shift": ModShift,
+	"Win":   ModWin,
+}

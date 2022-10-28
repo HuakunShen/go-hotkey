@@ -39,3 +39,15 @@ func TestHotkey(t *testing.T) {
 		}
 	}
 }
+
+func TestModifierMap(t *testing.T) {
+	modifierMapKeys := []string{"ModCtrl", "ModShift", "Mod1", "Mod2", "Mod3", "Mod4", "Mod5"}
+	if len(hotkey.ModiferMap) != len(modifierMapKeys) {
+		t.Errorf("Wrong Keymap Size")
+	}
+	for _, key := range modifierMapKeys {
+		if _, ok := hotkey.ModiferMap[key]; !ok {
+			t.Errorf("Key: %s doesn't exist", key)
+		}
+	}
+}

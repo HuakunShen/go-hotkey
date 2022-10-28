@@ -40,3 +40,15 @@ func TestHotkey(t *testing.T) {
 		}
 	}
 }
+
+func TestModifierMap(t *testing.T) {
+	modifierMapKeys := []string{"Alt", "Ctrl", "Shift", "Win"}
+	if len(hotkey.ModiferMap) != len(modifierMapKeys) {
+		t.Errorf("Wrong Keymap Size")
+	}
+	for _, key := range modifierMapKeys {
+		if _, ok := hotkey.ModiferMap[key]; !ok {
+			t.Errorf("Key: %s doesn't exist", key)
+		}
+	}
+}
